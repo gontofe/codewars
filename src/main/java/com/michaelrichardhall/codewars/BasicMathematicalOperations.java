@@ -14,22 +14,12 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class BasicMathematicalOperations {
     public static Integer basicMath(String op, int v1, int v2) {
-        switch (op) {
-            case "+":
-                return v1 + v2;
-            case "-":
-                return v1 - v2;
-
-            case "/":
-
-                return v1 / v2;
-
-
-            case "*":
-                return v1 * v2;
-
-            default:
-                return 0;
-        }
+        return switch (op) {
+            case "+" -> v1 + v2;
+            case "-" -> v1 - v2;
+            case "/" -> v1 / v2;
+            case "*" -> v1 * v2;
+            default -> 0;
+        };
     }
 }
