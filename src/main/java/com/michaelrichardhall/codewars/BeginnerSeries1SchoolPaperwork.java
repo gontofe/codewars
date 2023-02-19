@@ -11,11 +11,8 @@ package src.main.java.com.michaelrichardhall.codewars;
 //Waiting for translations and Feedback! Thanks!
 
 public class BeginnerSeries1SchoolPaperwork {
-    public static int paperWork(int n, int m) {
-        int pages = 0;
-        if (n > 0 & m > 0) {
-            pages = n * m;
-        }
-        return pages;
-    }
+  public static int paperWork(int n, int m)
+  {
+    return n <= 0 || m <= 0 ? 0 : n * m;
+  }
 }
