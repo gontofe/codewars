@@ -17,6 +17,6 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class KeepHydrated {
     public int Liters(double time) {
-        return (int) Math.floor(time / 2);
+        return (int) time / 2;
     }
 }
