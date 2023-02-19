@@ -14,11 +14,7 @@ import java.util.Arrays;
 //        Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
 
 public class HowGoodAreYouReally {
-    public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
-        double classAverage = Arrays.stream(classPoints)
-                .average()
-                .orElse(0);
-
-        return yourPoints > classAverage;
-    }
+  public static boolean betterThanAverage(int[] classPoints, int yourPoints) {
+    return yourPoints > Arrays.stream(classPoints).average().orElse(0);
+  }
 }
