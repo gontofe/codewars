@@ -16,11 +16,9 @@ import java.util.ArrayList;
 //The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
 
 public class NumberOfPeopleInTheBus {
-    public static int countPassengers(ArrayList<int[]> stops) {
-        int total = 0;
-        for (int[] stop : stops) {
-            total += (stop[0] - stop[1]);
-        }
-        return total;
-    }
+  public static int countPassengers(ArrayList<int[]> stops) {
+    return stops.stream()
+      .mapToInt(i -> i[0] - i[1])
+      .sum();
+  }
 }
