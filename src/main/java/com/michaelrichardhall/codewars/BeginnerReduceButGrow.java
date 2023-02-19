@@ -5,16 +5,12 @@ package src.main.java.com.michaelrichardhall.codewars;
 //
 //[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
 
-public class ReduceButGrow {
+import java.util.stream.IntStream;
+
+public class BeginnerReduceButGrow {
     public static int grow(int[] x) {
 
-        int total = 1;
-
-        for (int v : x) {
-            total = total * v;
-        }
-
-        return total;
+        return IntStream.of(x).reduce(1, (total, value) -> total * value);
 
     }
 }
