@@ -13,12 +13,10 @@ import java.util.stream.Collectors;
 public class ReverseWords {
     public static String reverseWords(final String original)
     {
-        Pattern pattern = Pattern.compile("\\s+|\\S+");
-        String ugh = pattern.matcher(original)
+        Pattern pattern = Pattern.compile("\\S+|\\s+");
+        return pattern.matcher(original)
                 .results()
                 .map(s -> new StringBuilder(s.group()).reverse())
                 .collect(Collectors.joining(""));
-        System.out.println(ugh);
-        return ugh;
     }
 }
