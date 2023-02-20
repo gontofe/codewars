@@ -8,7 +8,6 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class ReversedStrings {
     public static String solution(String str) {
-        StringBuilder builder = new StringBuilder(str);
-        return builder.reverse().toString();
+        return new StringBuilder(str).reverse().toString();
     }
 }
