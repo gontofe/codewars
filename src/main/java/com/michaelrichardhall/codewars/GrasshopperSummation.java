@@ -1,7 +1,5 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.stream.IntStream;
-
 //Summation
 //        Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
 //
@@ -12,9 +10,6 @@ import java.util.stream.IntStream;
 
 public class GrasshopperSummation {
     public static int summation(int n) {
-
-        return IntStream.rangeClosed(1, n)
-                .reduce(Integer::sum)
-                .getAsInt();
+        return n * (n + 1) / 2;
     }
 }
