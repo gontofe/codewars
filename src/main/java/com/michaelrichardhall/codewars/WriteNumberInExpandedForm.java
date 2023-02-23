@@ -1,8 +1,7 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 //Write Number in Expanded Form
 //        You will be given a number and you will need to return it as a string in Expanded Form. For example:
@@ -15,15 +14,10 @@ import java.util.stream.Collectors;
 public class WriteNumberInExpandedForm {
     public static String expandedForm(int num)
     {
-        String number = String.valueOf(num);
-        List<String> expandedForms = new ArrayList<String>();
-        for (int i = 0; i <= number.length() - 1; i++) {
-            char c = number.charAt(i);
-            if (c != '0') {
-                expandedForms.add(c + "0".repeat(number.length() - i - 1));
-            }
-        }
-        return expandedForms.stream()
+        int numLength = String.valueOf(num).length();
+        return IntStream.rangeClosed(0, numLength - 1)
+                .mapToObj(i -> String.valueOf(num).charAt(i) + "0".repeat(numLength - i - 1))
+                .filter(s -> !(s.matches("0+")))
                 .collect(Collectors.joining(" + "));
     }
 }
