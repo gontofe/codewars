@@ -1,7 +1,6 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 //Are they the "same"?
 //        Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
@@ -34,20 +33,6 @@ import java.util.Comparator;
 //        The two arrays have the same size (> 0) given as parameter in function comp.
 public class AreTheyTheSame {
     public static boolean comp(int[] a, int[] b) {
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
-        if (a == null || b == null || a == new int[0] || a.length != b.length){
-            return false;
-        }
-        Integer[] intArrayA = Arrays.stream(a).boxed().toArray(Integer[]::new);
-        Arrays.sort(intArrayA, Comparator.comparingInt(i -> Math.abs(i.intValue())));
-        Integer[] intArrayB = Arrays.stream(b).boxed().toArray(Integer[]::new);
-        Arrays.sort(intArrayB, Comparator.comparingInt(i -> Math.abs(i.intValue())));
-        for(int i = 0; i < intArrayA.length; i++) {
-            if (intArrayB[i] != intArrayA[i] * intArrayA[i]) {
-                return false;
-            }
-        }
-        return true;
+        return a != null && b != null && a.length == b.length && Arrays.equals(Arrays.stream(a).map(i -> i * i).sorted().toArray(), Arrays.stream(b).sorted().toArray());
     }
 }
