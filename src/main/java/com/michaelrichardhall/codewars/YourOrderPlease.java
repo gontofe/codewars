@@ -3,6 +3,7 @@ package src.main.java.com.michaelrichardhall.codewars;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 //Your order, please!
 //Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
