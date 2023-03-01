@@ -1,3 +1,5 @@
+package src.main.java.com.michaelrichardhall.codewars;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -37,7 +39,7 @@ import java.util.stream.Collectors;
 public class Welcome {
    public static String greet(String language){
     Map<String,String> welcomeMap = Stream.of(new String[][] {
-      {"english", "Welcome"},
+      {"english", "src.main.java.com.michaelrichardhall.codewars.Welcome"},
       {"czech", "Vitejte"},
       {"danish", "Velkomst"},
       {"dutch", "Welkom"},
