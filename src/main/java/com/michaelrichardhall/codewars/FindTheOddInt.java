@@ -1,7 +1,6 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 //Find the odd int
 //        Given an array of integers, find the one that appears an odd number of times.
@@ -17,18 +16,7 @@ import java.util.Map;
 
 public class FindTheOddInt {
     public static int findIt(int[] a) {
-        int odd = 0;
-        Map<Integer, Integer> intMap = new HashMap();
-        for(int i : a) {
-            Integer count = intMap.get(i);
-            count = (count != null ? count + 1 : 1);
-            intMap.put(i, count);
-        }
-        for(Integer k: intMap.keySet()) {
-            if (intMap.get(k) % 2 != 0) {
-                odd = k.intValue();
-            }
-        }
-        return odd;
+        return Arrays.stream(a)
+                .reduce(0, (x, y) -> x ^ y);
     }
 }
