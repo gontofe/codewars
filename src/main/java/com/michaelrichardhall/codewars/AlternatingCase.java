@@ -14,13 +14,9 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class AlternatingCase {
     public static String toAlternativeString(String string) {
-        StringBuilder alternative = new StringBuilder();
-
-        for (char c: string.toCharArray()) {
-            char x = Character.toUpperCase(c) == c ? Character.toLowerCase(c) : Character.toUpperCase(c);
-            alternative.append(x);
-        }
-
-        return alternative.toString();
+        return string.chars()
+                .mapToObj(i -> Character.isUpperCase(i) ? Character.toLowerCase(i) : Character.toUpperCase(i))
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
     }
 }
