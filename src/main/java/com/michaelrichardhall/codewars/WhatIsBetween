@@ -1,3 +1,6 @@
+
+package src.main.java.com.michaelrichardhall.codewars;
+
 import java.util.stream.IntStream;
 
 //What is between?
