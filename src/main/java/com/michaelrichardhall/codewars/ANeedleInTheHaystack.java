@@ -1,5 +1,7 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
+import java.util.Arrays;
+
 //A Needle in the Haystack
 //Can you find the needle in the haystack?
 //
@@ -16,11 +18,6 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class ANeedleInTheHaystack {
     public static String findNeedle(Object[] haystack) {
-        int position = 0;
-        for ( int i = 0; i < haystack.length; i++ )
-            if ( "needle".equals( haystack[i] ) )
-                position = i;
-
-        return "found the needle at position " + position;
+        return "found the needle at position " + Arrays.asList(haystack).indexOf("needle");
     }
 }
