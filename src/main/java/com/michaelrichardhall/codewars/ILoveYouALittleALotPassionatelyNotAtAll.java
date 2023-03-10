@@ -17,9 +17,7 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class ILoveYouALittleALotPassionatelyNotAtAll {
     public static String howMuchILoveYou(int nb_petals) {
-        int petals = nb_petals % 6;
-
-        return switch (petals) {
+        return switch (nb_petals % 6) {
             case 1 -> "I love you";
             case 2 -> "a little";
             case 3 -> "a lot";
