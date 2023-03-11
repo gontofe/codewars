@@ -27,7 +27,7 @@ package src.main.java.com.michaelrichardhall.codewars;
 //
 //Assumption: Assume that Desired Principal 'D' is always greater than the initial principal. However it is best to take into consideration that if Desired Principal 'D' is equal to Principal 'P' this should return 0 Years.
 
-public class Money {
+public class MoneyMoneyMoney {
   public static int calculateYears(double principal, double interest,  double tax, double desired) {
     int years = 0;
     while(principal < desired) {

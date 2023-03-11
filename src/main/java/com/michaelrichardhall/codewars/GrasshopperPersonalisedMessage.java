@@ -9,7 +9,7 @@ package src.main.java.com.michaelrichardhall.codewars;
 //        name equals owner	'Hello boss'
 //        otherwise	'Hello guest'
 
-class GrassHopperPersonalisedMessage {
+class GrasshopperPersonalisedMessage {
     static String greet(String name, String owner) {
         return "Hello " + (name.equals(owner) ? "boss" : "guest");
     }
