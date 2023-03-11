@@ -1,8 +1,5 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 //Double Char
 //Given a string,you have to return a string in which each character(case-sensitive)is repeated once.
 //
@@ -14,6 +11,6 @@ import java.util.stream.Collectors;
 
 public class DoubleChar {
     public static String doubleChar(String s) {
-        return Arrays.stream(s.split("")).map(str -> str.repeat(2)).collect(Collectors.joining(""));
+        return s.replaceAll(".", "$0$0");
     }
 }
