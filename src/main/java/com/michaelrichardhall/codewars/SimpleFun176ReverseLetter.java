@@ -17,7 +17,6 @@ package src.main.java.com.michaelrichardhall.codewars;
 
 public class SimpleFun176ReverseLetter {
     public static String reverseLetter(final String str) {
-        StringBuilder sb = new StringBuilder(str.replaceAll("[^a-zA-Z]",""));
-        return sb.reverse().toString();
+        return new StringBuilder(str.replaceAll("[^a-zA-Z]","")).reverse().toString();
     }
 }
