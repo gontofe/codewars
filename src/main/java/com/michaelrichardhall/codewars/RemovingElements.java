@@ -1,6 +1,5 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class RemovingElements {
