@@ -1,10 +1,5 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 /*
 Complete the function which returns the weekday according to the input number:
 
@@ -20,15 +15,15 @@ Otherwise returns "Wrong, please enter a number between 1 and 7"
 
 public class ReturnTheDay {
     public static String getDay(int n) {
-        Map<Integer, String> map = Stream.of(new Object[][]{
-                {1, "Sunday"},
-                {2, "Monday"},
-                {3, "Tuesday"},
-                {4, "Wednesday"},
-                {5, "Thursday"},
-                {6, "Friday"},
-                {7, "Saturday"}
-        }).collect(Collectors.toMap(data -> (Integer) data[0], data -> (String) data[1]));
-        return Optional.ofNullable(map.get(n)).orElse("Wrong, please enter a number between 1 and 7");
+        return switch (n) {
+            case 1 -> "Sunday";
+            case 2 -> "Monday";
+            case 3 -> "Tuesday";
+            case 4 -> "Wednesday";
+            case 5 -> "Thursday";
+            case 6 -> "Friday";
+            case 7 -> "Saturday";
+            default -> "Wrong, please enter a number between 1 and 7";
+        };
     }
 }
