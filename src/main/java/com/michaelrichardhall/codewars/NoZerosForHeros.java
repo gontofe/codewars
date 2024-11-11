@@ -16,7 +16,7 @@ Zero alone is fine, don't worry about it. Poor guy anyway
 public class NoZerosForHeros {
     public static int noBoringZeros(int n) {
         if (n > 0) {
-            String stringN = String.valueOf(i);
+            String stringN = String.valueOf(n);
             if (stringN.charAt(stringN.length() - 1) == '0') {
                 stringN = stringN.substring(0, stringN.length() - 1);
                 return Integer.parseInt(stringN);
@@ -24,9 +24,6 @@ public class NoZerosForHeros {
         } else {
             return n;
         }
-    }
-
-    public static void main(String[] args) {
-        noBoringZeros(1450);
+        return n;
     }
 }
