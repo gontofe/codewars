@@ -1,6 +1,5 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.Objects;
 import java.util.stream.IntStream;
 
 /*
@@ -25,11 +24,10 @@ Note that 121 has twice the digit 1.
  */
 public class CountTheDigit {
     public static int nbDig(int n, int d) {
-        String[] intArr = IntStream.rangeClosed(0, n)
-                .mapToObj(i -> String.valueOf(i * i))
-                .toArray(String[]::new);
-
-        return (int) String.join("", intArr).chars().filter(c -> c - 48 == d).count();
+        return (int) IntStream.rangeClosed(0, n)
+                .flatMap(i -> String.valueOf(i * i).chars())
+                .filter(i -> i == (char) d + '0')
+                .count();
     }
 }
 
