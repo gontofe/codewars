@@ -1,9 +1,11 @@
 package src.main.java.com.michaelrichardhall.codewars;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.summingInt;
 
 /*
 A bookseller has lots of books classified in 26 categories labeled A, B, C, ..., Z. Each book has a code of at least 3 characters. The 1st character of a code is a capital letter which defines the book category.
@@ -40,15 +42,11 @@ public class HelpTheBookseller {
         if (lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
             return "";
         }
-        Map<String, Integer> map = new HashMap<>();
-        for (String s : lstOfArt) {
-            map.merge(s.substring(0, 1), Integer.parseInt(s.split(" ")[1]), Integer::sum);
-        }
-        List<String> stringList = new ArrayList<>();
-        for (String s : lstOf1stLetter) {
-            stringList.add(String.format("(%s : %s)", s, map.getOrDefault(s, 0)));
-        }
-        return String.join(" - ", stringList);
+        Map<String, Integer> stock = Arrays.stream(lstOfArt)
+                .collect(groupingBy(s -> s.substring(0, 1), summingInt(s -> Integer.parseInt(s.split(" ")[1]))));
+        return Arrays.stream(lstOf1stLetter)
+                .map(s -> String.format("(%s : %s)", s, stock.getOrDefault(s, 0)))
+                .collect(Collectors.joining(" - "));
     }
 
     public static void main(String[] args) {
